@@ -10,7 +10,9 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(credentials: {username: string, password: string}): Observable<any> {
-    return this.http.post('/auth/login', credentials);
+      // Use the dev-server proxy (proxy.conf.json) for local development
+      // so the browser talks to :4200 and the proxy forwards to the HTTPS backend.
+      return this.http.post('/auth/login', credentials);
   }
 
   isLoggedIn(): boolean {
