@@ -9,7 +9,7 @@ RUN npm run build -- --configuration=production
 
 # NGINX stage
 FROM nginx:stable-alpine
-COPY --from=build /app/dist/frontend /usr/share/nginx/html
+COPY --from=build /app/dist/frontend/browser /usr/share/nginx/html
 # custom nginx config to proxy /api and /auth (see nginx.conf)
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY ssl/selfsigned.crt /etc/ssl/certs/selfsigned.crt
