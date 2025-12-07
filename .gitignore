@@ -110,9 +110,7 @@ temp/
 
 # Secrets and keys
 keystore.p12
-*.key
 *.pem
-*.crt
 
 # Docker
 .dockerignore
