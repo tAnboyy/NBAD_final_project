@@ -1,31 +1,13 @@
 version: '3.8'
 services:
-  db:
-    image: mysql:8.0
-    environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-    volumes:
-      - db_data:/var/lib/mysql
-    healthcheck:
-      test: ["CMD","mysqladmin","ping","-h","localhost"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
   backend:
     build: ./backend
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/${MYSQL_DATABASE}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_URL: jdbc:mysql://dbaas-db-4935127-do-user-25081514-0.e.db.ondigitalocean.com:25060/${MYSQL_DATABASE}?useSSL=true&allowPublicKeyRetrieval=true&serverTimezone=UTC
       SPRING_DATASOURCE_USERNAME: ${MYSQL_USER}
       SPRING_DATASOURCE_PASSWORD: ${MYSQL_PASSWORD}
       JWT_SECRET: ${JWT_SECRET}
       SERVER_PORT: 3000
-    depends_on:
-      db:
-        condition: service_healthy
     ports:
       - "3000:3000"
     restart: unless-stopped
@@ -36,9 +18,5 @@ services:
       - backend
     ports:
       - "80:80"
-      # optional HTTPS port if you set up certs inside container
       - "443:443"
     restart: unless-stopped
-
-volumes:
-  db_data:
