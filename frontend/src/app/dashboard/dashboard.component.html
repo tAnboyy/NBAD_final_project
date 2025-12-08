@@ -1,12 +1,53 @@
 <div class="dashboard" role="main" aria-labelledby="dashboard-title">
-  <h1 id="dashboard-title">Dashboard</h1>
-  <div class="summary">
-    <h2>Recent Innovations in Clean Energy (Last 6 Months)</h2>
-    <p>In the past six months, the clean energy sector has witnessed remarkable advancements driven by technological breakthroughs and increased global commitment to sustainability. Solar energy has seen significant improvements with the development of perovskite solar cells, achieving efficiencies over 25%, making them more cost-effective and versatile. Wind power innovations include larger turbine blades and offshore installations, with floating wind farms becoming operational in deeper waters. Battery storage technology has advanced with solid-state batteries offering higher energy density and faster charging times, crucial for electric vehicles and grid stability. Hydrogen production has gained traction through green electrolysis methods, reducing carbon emissions in industrial applications. Additionally, smart grid technologies integrating AI for better energy management have enhanced efficiency and reduced waste. These innovations are supported by policy changes and investments, paving the way for a more sustainable future.</p>
-    <p><strong>Reference:</strong> <a href="https://www.iea.org/reports/clean-energy-innovations" target="_blank" rel="noopener">IEA Clean Energy Innovations Report</a></p>
-  </div>
-  <div class="tech-stack">
-    <h2>Technical Aspects of the Project</h2>
-    <p>This application is built as a Single Page Application (SPA) using Angular for the frontend and Java Spring Boot for the backend. The frontend communicates with the backend through HTTP calls, with JWT authentication ensuring secure access. Data is stored in a MySQL database, and charts are dynamically generated using D3.js library. The application is hosted on a single server, with NGINX serving the frontend on port 80 and proxying API requests to the backend on port 3000. Accessibility features follow WCAG guidelines, including ARIA labels, semantic HTML, and keyboard navigation.</p>
-  </div>
+  <header class="page-header">
+    <p class="eyebrow">Live pulse · last 6 months</p>
+    <h1 id="dashboard-title">Dashboard</h1>
+    <p class="lede">Track breakthroughs across solar, wind, storage, and hydrogen plus the stack powering this app.</p>
+  </header>
+
+  <section class="card narrative" aria-labelledby="innovations-title">
+    <div>
+      <h2 id="innovations-title">Recent Innovations in Clean Energy</h2>
+      <p>In the past six months, the clean energy sector has witnessed remarkable advancements driven by technological breakthroughs and increased global commitment to sustainability. Solar energy has seen significant improvements with the development of perovskite solar cells, achieving efficiencies over 25%, making them more cost-effective and versatile.</p>
+      <p>Wind power innovations include larger turbine blades and offshore installations, with floating wind farms becoming operational in deeper waters. Battery storage technology has advanced with solid-state batteries offering higher energy density and faster charging times, crucial for electric vehicles and grid stability.</p>
+      <p>Hydrogen production has gained traction through green electrolysis methods, reducing carbon emissions in industrial applications. Additionally, smart grid technologies integrating AI for better energy management have enhanced efficiency and reduced waste.</p>
+      <p class="reference"><strong>Reference:</strong> <a href="https://www.iea.org/reports/clean-energy-innovations" target="_blank" rel="noopener">IEA Clean Energy Innovations Report</a></p>
+    </div>
+  </section>
+
+  <section class="stat-grid" aria-label="Key metrics">
+    <article class="stat-card">
+      <p>Perovskite PV</p>
+      <span>25%+</span>
+      <small>lab conversion efficiency</small>
+    </article>
+    <article class="stat-card">
+      <p>Offshore wind</p>
+      <span>15GW</span>
+      <small>floating projects announced</small>
+    </article>
+    <article class="stat-card">
+      <p>Solid-state</p>
+      <span>2.5×</span>
+      <small>energy density lift</small>
+    </article>
+    <article class="stat-card">
+      <p>Green hydrogen</p>
+      <span>-90%</span>
+      <small>carbon intensity vs. grey</small>
+    </article>
+  </section>
+
+  <section class="card tech-stack" aria-labelledby="tech-stack-title">
+    <div>
+      <h2 id="tech-stack-title">Technical Aspects of the Project</h2>
+      <p>This application is built as a Single Page Application (SPA) using Angular for the frontend and Java Spring Boot for the backend. The frontend communicates with the backend through HTTP calls, with JWT authentication ensuring secure access. Data is stored in a MySQL database, and charts are dynamically generated using D3.js.</p>
+      <ul>
+        <li><strong>Infra:</strong> NGINX serves the Angular build and proxies secure API calls to Spring Boot.</li>
+        <li><strong>Security:</strong> HTTPS everywhere, JWT auth, BCrypt hashed passwords.</li>
+        <li><strong>Data:</strong> Public APIs + MySQL innovations table feed the D3 visualizations.</li>
+        <li><strong>Accessibility:</strong> Semantic markup, ARIA labels, keyboard-friendly controls.</li>
+      </ul>
+    </div>
+  </section>
 </div>

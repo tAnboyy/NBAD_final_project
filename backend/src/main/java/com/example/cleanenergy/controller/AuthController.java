@@ -45,4 +45,29 @@ public class AuthController {
                 .orElseGet(() -> ResponseEntity.status(401).body("Invalid credentials"));
     }
 
+    @PostMapping("/register")
+    public ResponseEntity<?> register(@RequestBody Map<String, String> payload) {
+        String username = payload.get("username");
+        String password = payload.get("password");
+
+        if (username == null || username.isBlank() || password == null || password.isBlank()) {
+            return ResponseEntity.badRequest().body("Username and password are required");
+        }
+
+        if (password.length() < 6) {
+            return ResponseEntity.badRequest().body("Password must be at least 6 characters long");
+        }
+
+        if (userRepository.existsByUsername(username)) {
+            return ResponseEntity.status(409).body("Username already taken");
+        }
+
+        User user = new User();
+        user.setUsername(username);
+        user.setPassword(passwordEncoder.encode(password));
+        userRepository.save(user);
+
+        return ResponseEntity.ok(Map.of("message", "User registered successfully"));
+    }
+
 }

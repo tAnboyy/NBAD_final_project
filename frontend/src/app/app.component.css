@@ -1,0 +1,167 @@
+ :host {
+	display: block;
+}
+
+.app-shell {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background: #f5f7fb;
+}
+
+.app-header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	padding: 18px 32px;
+	background: linear-gradient(135deg, #021c34, #0a4d68 60%, #0f8a5f);
+	color: #fff;
+	box-shadow: 0 10px 30px rgba(0, 12, 34, 0.35);
+}
+
+.brand-mark {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+}
+
+.brand-mark img {
+	width: 56px;
+	height: 56px;
+	border-radius: 14px;
+	object-fit: cover;
+	border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.brand-mark p {
+	margin: 0;
+	font-size: 1.1rem;
+	letter-spacing: 0.05em;
+}
+
+.brand-mark span {
+	font-size: 0.85rem;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.75);
+}
+
+.primary-nav,
+.primary-nav a,
+.primary-nav button {
+	display: flex;
+	align-items: center;
+}
+
+.primary-nav {
+	gap: 18px;
+}
+
+.primary-nav a {
+	color: #f0faff;
+	text-decoration: none;
+	font-weight: 500;
+	padding-bottom: 2px;
+	border-bottom: 2px solid transparent;
+	transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.primary-nav a:hover,
+.primary-nav a.active {
+	border-color: #f6c343;
+	color: #f6c343;
+}
+
+.primary-nav button,
+.login-link {
+	border: none;
+	background: #f6c343;
+	color: #021c34;
+	padding: 8px 18px;
+	border-radius: 999px;
+	cursor: pointer;
+	font-weight: 600;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	text-decoration: none;
+}
+
+.primary-nav button:hover,
+.login-link:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 8px 18px rgba(246, 195, 67, 0.35);
+}
+
+.cta-pair {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.login-link.ghost {
+	background: transparent;
+	color: #f0faff;
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	box-shadow: none;
+}
+
+.login-link.ghost:hover {
+	color: #f6c343;
+	border-color: #f6c343;
+}
+
+.app-main {
+	flex: 1;
+	padding: 32px;
+}
+
+.app-footer {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 20px;
+	background: #031323;
+	color: #d8eafd;
+	padding: 32px;
+}
+
+.app-footer h3 {
+	margin-top: 0;
+	color: #86e5c6;
+}
+
+.app-footer p,
+.app-footer ul {
+	margin: 0;
+	line-height: 1.5;
+}
+
+.app-footer ul {
+	list-style: none;
+	padding: 0;
+}
+
+.app-footer a {
+	color: #f6c343;
+	text-decoration: none;
+}
+
+.footnote {
+	margin-top: 12px;
+	font-size: 0.85rem;
+	color: rgba(216, 234, 253, 0.8);
+}
+
+@media (max-width: 720px) {
+	.app-main {
+		padding: 20px;
+	}
+
+	.primary-nav {
+		width: 100%;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+}

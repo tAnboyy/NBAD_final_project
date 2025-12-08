@@ -1,10 +1,51 @@
-<nav role="navigation" aria-label="Main navigation">
-  <ul>
-    <li><a routerLink="/dashboard" routerLinkActive="active" aria-current="page">Dashboard</a></li>
-    <li><a routerLink="/summary" routerLinkActive="active" aria-current="page">Summary</a></li>
-    <li><a routerLink="/reports" routerLinkActive="active" aria-current="page">Reports</a></li>
-    <li><button (click)="logout()" aria-label="Logout">Logout</button></li>
-  </ul>
-</nav>
+<div class="app-shell">
+  <header class="app-header">
+    <a routerLink="/" class="brand-mark" aria-label="Back to landing page">
+      <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=200&q=80" alt="Clean energy icon" />
+      <div>
+        <p>Clean Energy</p>
+        <span>Insights Platform</span>
+      </div>
+    </a>
 
-<router-outlet>
+    <nav class="primary-nav" *ngIf="isAuthenticated; else loggedOutCta" aria-label="Primary navigation">
+      <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+      <a routerLink="/summary" routerLinkActive="active">Summary</a>
+      <a routerLink="/reports" routerLinkActive="active">Reports</a>
+      <button (click)="logout()" aria-label="Logout">Logout</button>
+    </nav>
+
+    <ng-template #loggedOutCta>
+      <div class="cta-pair">
+        <a routerLink="/login" class="login-link">Sign in</a>
+        <a routerLink="/register" class="login-link ghost">Create account</a>
+      </div>
+    </ng-template>
+  </header>
+
+  <main class="app-main">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer class="app-footer">
+    <section>
+      <h3>About</h3>
+      <p>Clean Energy Insights brings together renewable generation, grid data, and public APIs to highlight progress toward decarbonization.</p>
+    </section>
+    <section>
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a routerLink="/summary">Innovation Summary</a></li>
+        <li><a routerLink="/reports">Grid Reports</a></li>
+        <li><a href="https://carbonintensity.org.uk/" target="_blank" rel="noopener">Carbon Intensity API</a></li>
+        <li><a href="https://open-meteo.com/" target="_blank" rel="noopener">Open Meteo API</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Contact</h3>
+      <p>Questions or ideas? hello&#64;cleanenergy.app</p>
+      <p class="footnote">© {{ currentYear }} Clean Energy Insights</p>
+      <p class="footnote">Made by Thanmay</p>
+    </section>
+  </footer>
+</div>

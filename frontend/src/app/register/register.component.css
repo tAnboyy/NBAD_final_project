@@ -1,0 +1,79 @@
+.register-container {
+  max-width: 420px;
+  margin: 60px auto;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(7, 15, 35, 0.12);
+}
+
+.subtitle {
+  margin-top: 0;
+  color: #5f6c7b;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d0d5dd;
+  font-size: 1rem;
+}
+
+small {
+  color: #c0362c;
+  display: block;
+  margin-top: 6px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #0f6b3f;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.feedback {
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 6px;
+  background: #fee4e2;
+  color: #b42318;
+}
+
+.feedback.success {
+  background: #e7f6ec;
+  color: #0f6b3f;
+}
+
+.auth-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.auth-link a {
+  color: #0f6b3f;
+  text-decoration: none;
+  font-weight: 600;
+}

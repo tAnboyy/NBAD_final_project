@@ -1,15 +1,36 @@
 <div class="reports-page" role="main" aria-labelledby="reports-title">
-  <h1 id="reports-title">Reports</h1>
-  <div class="chart-container">
-    <h2 id="chart-title">Innovation Types</h2>
-    <div #chart></div>
-  </div>
-  <p>This bar chart illustrates the distribution of clean energy innovations by type over the last six months. It highlights the focus areas in renewable technologies.</p>
-  <p><strong>Source:</strong> Data aggregated from global clean energy research and development reports.</p>
+  <header class="page-header">
+    <p class="eyebrow">Focus mix</p>
+    <h1 id="reports-title">Reports</h1>
+    <p>Break down innovation activity by technology type.</p>
+  </header>
 
-    <section class="data-description" aria-labelledby="data-desc-title">
-    <h3 id="data-desc-title">Data Behind This Chart</h3>
-    <p>The chart is built from the following dataset (each object represents the number of innovations of a given type):</p>
+  <section class="chart-grid">
+    <article class="chart-panel">
+      <div class="panel-head">
+        <div>
+          <h2 id="chart-title">Innovation Types</h2>
+          <p>Distribution of innovations across storage, hydrogen, solar, and wind.</p>
+        </div>
+        <span class="badge">D3 visualization</span>
+      </div>
+      <div class="chart-shell" aria-describedby="chart-title">
+        <div #chart></div>
+      </div>
+    </article>
+
+    <aside class="insight-card" aria-label="Report summary">
+      <h3>Key takeaways</h3>
+      <p>This bar chart illustrates the distribution of clean energy innovations by type over the last six months. It highlights the focus areas in renewable technologies and shows where R&amp;D teams are investing.</p>
+      <p><strong>Source:</strong> Data aggregated from global clean energy research and development reports.</p>
+    </aside>
+  </section>
+
+  <section class="data-description card" aria-labelledby="data-desc-title">
+    <div>
+      <h3 id="data-desc-title">Data Behind This Chart</h3>
+      <p>The chart is built from the following dataset (each object represents the number of innovations of a given type):</p>
+    </div>
     <pre aria-label="reports-data">[
     &#123;
       "count": 10,
@@ -29,5 +50,5 @@
     &#125;
   ]</pre>
     <p>This dataset indicates that <strong>Solar</strong> has the highest number of recorded innovations (20), followed by <strong>Wind</strong> (15), <strong>Battery</strong> (10), and <strong>Hydrogen</strong> (5).</p>
-    </section>
+  </section>
 </div>

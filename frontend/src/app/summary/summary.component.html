@@ -1,14 +1,36 @@
 <div class="summary-page" role="main" aria-labelledby="summary-title">
-  <h1 id="summary-title">Summary</h1>
-  <div class="chart-container">
-    <h2 id="chart-title">Innovations per Month</h2>
-    <div #chart></div>
-  </div>
-  <p>This bar chart displays the number of clean energy innovations reported each month over the last six months. The data is sourced from aggregated reports on renewable energy advancements.</p>
-  <p><strong>Source:</strong> Compiled from various industry reports and publications on clean energy technologies.</p>
-    <section class="data-description" aria-labelledby="summary-data-desc-title">
-    <h3 id="summary-data-desc-title">Data Behind This Chart</h3>
-    <p>The chart uses the following monthly innovation counts (each object is a month and its recorded innovations):</p>
+  <header class="page-header">
+    <p class="eyebrow">Monthly pulse</p>
+    <h1 id="summary-title">Summary</h1>
+    <p>Visualize innovation volume by month and capture the storyline behind the data.</p>
+  </header>
+
+  <section class="chart-grid">
+    <article class="chart-panel">
+      <div class="panel-head">
+        <div>
+          <h2 id="chart-title">Innovations per Month</h2>
+          <p>Counts from aggregated renewable innovation trackers.</p>
+        </div>
+        <span class="badge">D3 visualization</span>
+      </div>
+      <div class="chart-shell" aria-describedby="chart-title">
+        <div #chart></div>
+      </div>
+    </article>
+
+    <aside class="insight-card" aria-label="Narrative summary">
+      <h3>What the chart says</h3>
+      <p>This bar chart displays the number of clean energy innovations reported each month over the last six months. The peaks align with funding announcements in October-November, while June reflects a quieter R&D cycle.</p>
+      <p><strong>Source:</strong> Compiled from industry reports and publications on clean energy technologies.</p>
+    </aside>
+  </section>
+
+  <section class="data-description card" aria-labelledby="summary-data-desc-title">
+    <div>
+      <h3 id="summary-data-desc-title">Data Behind This Chart</h3>
+      <p>The chart uses the following monthly innovation counts (each object is a month and its recorded innovations):</p>
+    </div>
     <pre aria-label="summary-data">[
     &#123;
       "innovations": 10,
@@ -36,5 +58,5 @@
     &#125;
   ]</pre>
     <p>Summary: The highest reported month is <strong>November</strong> with 15 innovations, and the lowest is <strong>June</strong> with 5 innovations.</p>
-    </section>
+  </section>
 </div>
